@@ -39,7 +39,7 @@
                       *ngFor="let course of department.courses"
                     >
                       <a class="text-dark">
-                        {{ course }}
+                        {{ course.name }}
                       </a>
                     </li>
                   </ul>
@@ -55,7 +55,7 @@
               <div class="product-tags clearfix">
                 <ul class="list-unstyled mb-0">
                   <li *ngFor="let job of department.jobs">
-                    <a>{{ job }}</a>
+                    <a>{{ job.name }}</a>
                   </li>
                 </ul>
               </div>
@@ -71,7 +71,7 @@
                   <div class="footerimg d-flex mt-0 mb-0">
                     <div class="d-flex footerimg-l mb-0">
                       <a class="time-title p-0 leading-normal mt-2"
-                        >{{ uni }}
+                        >{{ uni.name }}
                         <i
                           class="icon icon-check text-success fs-12 ml-1"
                           data-toggle="tooltip"
