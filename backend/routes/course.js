@@ -5,7 +5,15 @@ const Course = require("../models/Course");
 
 router.get("/course", async (req, res) => {
   Course.find({})
-    .then((result) => res.json(result))
+    .then((result) => {
+      let returnedCourses = [];
+
+      for (let i = 0; i < result.length; i++) {
+        returnedCourses.push(result[i].transform());
+      }
+
+      res.send(returnedCourses);
+    })
     .catch((error) => res.status(500).send(error));
 });
 
