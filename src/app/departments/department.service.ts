@@ -2,6 +2,7 @@ import { Department } from './department.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DepartmentService {
@@ -42,7 +43,7 @@ export class DepartmentService {
 
   getDepartments() {
     this.http
-      .get<Department[]>('http://localhost:8080/api/department')
+      .get<Department[]>(`${environment.apiURL}department`)
       .subscribe((depData) => {
         this.departments = depData;
         this.depsUpdated.next([...this.departments]);
@@ -56,7 +57,7 @@ export class DepartmentService {
   addDepartment(department: Department) {
     console.log(department);
     this.http
-      .post<{ _id: string }>('http://localhost:8080/api/department', department)
+      .post<{ _id: string }>(`${environment.apiURL}department`, department)
       .subscribe((resData) => {
         department.id = resData._id;
         this.departments.push(department);

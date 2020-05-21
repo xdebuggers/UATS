@@ -69,13 +69,13 @@ export class DepartmentCreateComponent implements OnInit {
     this.depForm.value.courses.forEach((element) => {
       department.courses.push({ name: element });
     });
-    this.depForm.value.courses.forEach((element) => {
+    this.depForm.value.skills.forEach((element) => {
       department.skills.push({ name: element });
     });
-    this.depForm.value.courses.forEach((element) => {
+    this.depForm.value.jobs.forEach((element) => {
       department.jobs.push({ name: element });
     });
-    this.depForm.value.courses.forEach((element) => {
+    this.depForm.value.universities.forEach((element) => {
       department.universities.push({ name: element });
     });
 
