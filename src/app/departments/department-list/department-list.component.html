@@ -37,7 +37,9 @@
   <ng-container matColumnDef="info">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell class="ic" *matCellDef="let dep" width="30px">
-      <a mat-icon-button color="primary"><mat-icon>info</mat-icon></a>
+      <a mat-icon-button color="primary" [routerLink]="['show', dep.id]"
+        ><mat-icon>info</mat-icon></a
+      >
     </td>
   </ng-container>
   <ng-container matColumnDef="satisfaction">

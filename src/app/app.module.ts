@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { DepartmentShowComponent } from './departments/department-show/department-show.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
     HeaderComponent,
     DepartmentCreateComponent,
     DepartmentListComponent,
+    DepartmentShowComponent,
   ],
   imports: [
     BrowserModule,
