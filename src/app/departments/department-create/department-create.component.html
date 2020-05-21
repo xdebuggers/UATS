@@ -1,0 +1,78 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Create new department</mat-card-title>
+    <mat-card-subtitle
+      >Please fill the form to create a new department</mat-card-subtitle
+    >
+  </mat-card-header>
+  <form [formGroup]="depForm" (ngSubmit)="onSubmit()">
+    <div style="padding: 16px;">
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input
+            formControlName="name"
+            matInput
+            placeholder="Ex. Computer Engeneeing"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea
+            formControlName="description"
+            matInput
+            placeholder="Ex. A good dep."
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Satisfaction</mat-label>
+          <input
+            formControlName="satisfaction"
+            matInput
+            placeholder="Ex. 70%"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Courses</mat-label>
+          <mat-select formControlName="courses" multiple>
+            <mat-option *ngFor="let topping of coursesList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Skills</mat-label>
+          <mat-select formControlName="skills" multiple>
+            <mat-option *ngFor="let topping of skillsList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Jobs</mat-label>
+          <mat-select formControlName="jobs" multiple>
+            <mat-option *ngFor="let topping of jobsList" [value]="topping">{{
+              topping
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Universities</mat-label>
+          <mat-select formControlName="universities" multiple>
+            <mat-option
+              *ngFor="let topping of universitiesList"
+              [value]="topping"
+              >{{ topping }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </mat-card-content>
+    </div>
+  </form>
+  <mat-card-actions>
+    <button mat-button color="warn" (click)="router.navigate(['departments'])">
+      Back
+    </button>
+    <button mat-button color="primary" (click)="onSubmit()">Add</button>
+  </mat-card-actions>
+</mat-card>

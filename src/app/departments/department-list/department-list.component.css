@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+
+.ic {
+  text-align: center;
+}
+
+.mat-mini-fab {
+  margin: 5px 5px;
+}
+.add {
+  text-align: right;
+  margin: 10px 0px;
+}
+.mat-raised-button {
+  background-color: #2e7d32;
+}
