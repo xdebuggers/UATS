@@ -1,0 +1,93 @@
+<div class="container">
+  <section class="sptb">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-8 col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="font-weight-semibold">
+                {{ department.name }}
+              </h2>
+              <div class="item7-card-img">
+                <img
+                  src="../../../assets/images/1.jpg"
+                  alt="img"
+                  class="w-100"
+                />
+                <div class="item7-card-text">
+                  <span class="badge badge-info">Jobs</span>
+                </div>
+              </div>
+              <hr />
+              <p>
+                {{ department.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Courses</h3>
+            </div>
+            <div class="card-body p-0">
+              <div class="list-catergory">
+                <div class="item-list">
+                  <ul class="list-group mb-0">
+                    <li
+                      class="list-group-item border-bottom-0"
+                      *ngFor="let course of department.courses"
+                    >
+                      <a class="text-dark">
+                        {{ course }}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Jobs</h3>
+            </div>
+            <div class="card-body">
+              <div class="product-tags clearfix">
+                <ul class="list-unstyled mb-0">
+                  <li *ngFor="let job of department.jobs">
+                    <a>{{ job }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-0">
+            <div class="card-header">
+              <h3 class="card-title">Universities</h3>
+            </div>
+            <div class="card-body p-0">
+              <ul class="vertical-scroll">
+                <li class="item2" *ngFor="let uni of department.universities">
+                  <div class="footerimg d-flex mt-0 mb-0">
+                    <div class="d-flex footerimg-l mb-0">
+                      <a class="time-title p-0 leading-normal mt-2"
+                        >{{ uni }}
+                        <i
+                          class="icon icon-check text-success fs-12 ml-1"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title=""
+                          data-original-title="verified"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

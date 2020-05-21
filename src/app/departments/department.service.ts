@@ -7,7 +7,7 @@ export class DepartmentService {
   constructor() {}
   private departments: Department[] = [
     {
-      id: '1',
+      id: '4',
       name: 'IT',
       description: 'the it is good',
       courses: ['TBL', 'TTS'],

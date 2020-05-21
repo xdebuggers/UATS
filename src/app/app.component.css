@@ -2,3 +2,7 @@ main {
   margin: 1rem auto;
   width: 80%;
 }
+
+a {
+  text-decoration: none;
+}
