@@ -61,11 +61,24 @@ export class DepartmentCreateComponent implements OnInit {
       name: this.depForm.value.name,
       description: this.depForm.value.description,
       satisfaction: this.depForm.value.satisfaction,
-      courses: this.depForm.value.courses,
-      skills: this.depForm.value.skills,
-      jobs: this.depForm.value.jobs,
-      universities: this.depForm.value.universities,
+      courses: [],
+      skills: [],
+      jobs: [],
+      universities: [],
     };
+    this.depForm.value.courses.forEach((element) => {
+      department.courses.push({ name: element });
+    });
+    this.depForm.value.courses.forEach((element) => {
+      department.skills.push({ name: element });
+    });
+    this.depForm.value.courses.forEach((element) => {
+      department.jobs.push({ name: element });
+    });
+    this.depForm.value.courses.forEach((element) => {
+      department.universities.push({ name: element });
+    });
+
     this.departmentService.addDepartment(department);
     this.router.navigate(['departments']);
   }

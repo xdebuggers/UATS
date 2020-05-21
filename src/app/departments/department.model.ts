@@ -3,8 +3,8 @@ export interface Department {
   name: string;
   description: string;
   satisfaction: string;
-  skills: string[];
-  universities: string[];
-  jobs: string[];
-  courses: string[];
+  skills: { name: string }[];
+  universities: { name: string }[];
+  jobs: { name: string }[];
+  courses: { name: string }[];
 }
