@@ -5,7 +5,15 @@ const Department = require("../models/Department");
 
 router.get("/department", async (req, res) => {
   Department.find({})
-    .then((result) => res.json(result))
+    .then((result) => {
+      let data = [];
+
+      for (let i = 0; i < result.length; i++) {
+        data.push(result[i].transform());
+      }
+
+      res.send(data);
+    })
     .catch((error) => res.status(500).send(error));
 });
 

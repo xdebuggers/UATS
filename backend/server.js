@@ -22,6 +22,7 @@ var course = require("./routes/course");
 var skill = require("./routes/skill");
 var job = require("./routes/job");
 var university = require("./routes/university");
+var question = require("./routes/question");
 
 // Using Routes
 app.use("/api/", department);
@@ -29,6 +30,7 @@ app.use("/api/", course);
 app.use("/api/", skill);
 app.use("/api/", job);
 app.use("/api/", university);
+app.use("/api/", question);
 
 app.listen(8080, () => {
   console.log(`Server listening on http://localhost:8080`);
