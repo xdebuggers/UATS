@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DepartmentShowComponent } from './departments/department-show/department-show.component';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { DepartmentShowComponent } from './departments/department-show/departmen
     MatSelectModule,
     MatInputModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

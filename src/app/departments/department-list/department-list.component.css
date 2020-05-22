@@ -16,3 +16,7 @@ table {
 .mat-raised-button {
   background-color: #2e7d32;
 }
+
+mat-spinner {
+  margin: auto;
+}

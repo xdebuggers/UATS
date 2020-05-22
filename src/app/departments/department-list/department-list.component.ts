@@ -12,6 +12,7 @@ export class DepartmentListComponent implements OnInit, OnDestroy {
   constructor(public departmentService: DepartmentService) {}
   departments: Department[];
   private depsSub: Subscription;
+  isLoading = false;
   displayedColumns: string[] = [
     'id',
     'name',
@@ -23,9 +24,11 @@ export class DepartmentListComponent implements OnInit, OnDestroy {
   ];
 
   ngOnInit() {
+    this.isLoading = true;
     this.depsSub = this.departmentService
       .getUpdatedDepartmentsListener()
       .subscribe((deps: Department[]) => {
+        this.isLoading = false;
         this.departments = deps;
       });
     this.departmentService.getDepartments();
