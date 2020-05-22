@@ -24,7 +24,6 @@ export class DepartmentService {
   }
 
   addDepartment(department: Department) {
-    console.log(department);
     this.http
       .post<{ _id: string }>(`${environment.apiURL}department`, department)
       .subscribe((resData) => {
