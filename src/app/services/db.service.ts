@@ -1,23 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DBService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getJobs() {
-    var jobs: string[] = ['Engineer', 'manager', 'tester'];
-    return jobs;
+    return this.http.get(`${environment.apiURL}job`);
   }
   getUniversties() {
-    var universities: string[] = ['KOU', 'SOU', 'IST'];
-    return universities;
+    return this.http.get(`${environment.apiURL}university`);
   }
   getSkills() {
-    var skills: string[] = ['problem solving', 'best practice', 'swimming'];
-    return skills;
+    return this.http.get(`${environment.apiURL}skill`);
   }
   getCourses() {
-    var courses: string[] = ['TBL', 'MML', 'EDV'];
-    return courses;
+    return this.http.get(`${environment.apiURL}course`);
   }
 }

@@ -32,17 +32,29 @@ export class DepartmentCreateComponent implements OnInit {
       if (paramMap.has('id')) {
         this.mode = 'e';
         this.id = paramMap.get('id');
-        this.department = this.departmentService.getDepartment(this.id);
+        this.departmentService
+          .getDepartment(this.id)
+          .subscribe((depData: Department) => {
+            this.department = depData;
+          });
       } else {
         this.mode = 'a';
         this.id = null;
       }
     });
 
-    this.jobsList = this.dBService.getJobs();
-    this.skillsList = this.dBService.getSkills();
-    this.universitiesList = this.dBService.getUniversties();
-    this.coursesList = this.dBService.getCourses();
+    this.dBService.getJobs().subscribe((Data) => {
+      this.jobsList = Data;
+    });
+    this.dBService.getSkills().subscribe((Data) => {
+      this.skillsList = Data;
+    });
+    this.dBService.getUniversties().subscribe((Data) => {
+      this.universitiesList = Data;
+    });
+    this.dBService.getCourses().subscribe((Data) => {
+      this.coursesList = Data;
+    });
 
     this.depForm = this.fb.group({
       name: this.department ? this.department.name : '',

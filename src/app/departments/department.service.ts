@@ -7,38 +7,7 @@ import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class DepartmentService {
   constructor(public http: HttpClient) {}
-  private departments: Department[] = [
-    // {
-    //   id: '4',
-    //   name: 'IT',
-    //   description: 'the it is good',
-    //   courses: ['TBL', 'TTS'],
-    //   jobs: ['Programmaer', 'manager'],
-    //   satisfaction: '100%',
-    //   skills: ['swimming', 'problem solving'],
-    //   universities: ['KOU', 'SBU'],
-    // },
-    // {
-    //   id: '2',
-    //   name: 'BS',
-    //   description: '',
-    //   courses: [''],
-    //   jobs: [''],
-    //   satisfaction: '',
-    //   skills: [''],
-    //   universities: [''],
-    // },
-    // {
-    //   id: '3',
-    //   name: 'TS',
-    //   description: '',
-    //   courses: [''],
-    //   jobs: [''],
-    //   satisfaction: '',
-    //   skills: [''],
-    //   universities: [''],
-    // },
-  ];
+  private departments: Department[];
   private depsUpdated = new Subject<Department[]>();
 
   getDepartments() {
@@ -66,14 +35,16 @@ export class DepartmentService {
   }
 
   deleteDepartment(id: string) {
-    const newDeps = this.departments.filter(
-      (department) => department.id !== id
-    );
-    this.departments = newDeps;
-    this.depsUpdated.next([...this.departments]);
+    this.http.delete(`${environment.apiURL}department/${id}`).subscribe(() => {
+      const newDeps = this.departments.filter(
+        (department) => department.id !== id
+      );
+      this.departments = newDeps;
+      this.depsUpdated.next([...this.departments]);
+    });
   }
 
   getDepartment(id: string) {
-    return { ...this.departments.find((d) => d.id === id) };
+    return this.http.get(`${environment.apiURL}department/${id}`);
   }
 }

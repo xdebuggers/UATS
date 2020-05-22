@@ -19,7 +19,9 @@ router.get("/department", async (req, res) => {
 
 router.get("/department/:id", async (req, res) => {
   Department.findById(req.params.id)
-    .then((result) => res.json(result))
+    .then((result) => {
+      res.send(result.transform());
+    })
     .catch((error) => res.status(500).send(error));
 });
 

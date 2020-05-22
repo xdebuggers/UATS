@@ -15,7 +15,9 @@
                   class="w-100"
                 />
                 <div class="item7-card-text">
-                  <span class="badge badge-info">Jobs</span>
+                  <span class="badge badge-info">{{
+                    department.satisfaction
+                  }}</span>
                 </div>
               </div>
               <hr />
@@ -58,6 +60,27 @@
                     <a>{{ job.name }}</a>
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Skills</h3>
+            </div>
+            <div class="card-body p-0">
+              <div class="list-catergory">
+                <div class="item-list">
+                  <ul class="list-group mb-0">
+                    <li
+                      class="list-group-item border-bottom-0"
+                      *ngFor="let skill of department.skills"
+                    >
+                      <a class="text-dark">
+                        {{ skill.name }}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
