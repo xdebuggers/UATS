@@ -1,0 +1,7 @@
+.example-spacer {
+  width: 50px;
+}
+.spacer {
+  margin: auto;
+  width: 50%;
+}

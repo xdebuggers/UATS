@@ -1,0 +1,16 @@
+<p *ngIf="!question || question == null">Bitrdin</p>
+<mat-card class="example-card" *ngIf="question || question != null">
+  <mat-card-content>
+    <h3>1st quesyopn</h3>
+    <p>
+      {{ question.content }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="spacer">
+      <button mat-button (click)="onYes()">Yes</button>
+      <span class="example-spacer"></span>
+      <button mat-button (click)="onNo()">No</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

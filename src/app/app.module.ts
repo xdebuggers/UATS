@@ -16,8 +16,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DepartmentShowComponent } from './departments/department-show/department-show.component';
+import { QuestionListComponent } from './quiz/question-list/question-list.component';
+import { QuestionShowComponent } from './quiz/question-show/question-show.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { DepartmentShowComponent } from './departments/department-show/departmen
     DepartmentCreateComponent,
     DepartmentListComponent,
     DepartmentShowComponent,
+    QuestionListComponent,
+    QuestionShowComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,7 @@ import { DepartmentShowComponent } from './departments/department-show/departmen
     MatInputModule,
     HttpClientModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,8 @@
+<app-question-show></app-question-show>
+<hr />
+<div *ngFor="let dep of departments">
+  <a mat-button [routerLink]="['/departments', 'show', dep.id]">{{
+    dep.name
+  }}</a>
+  <mat-progress-bar mode="determinate" [value]="dep.score"></mat-progress-bar>
+</div>
