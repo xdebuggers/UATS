@@ -14,7 +14,7 @@ export class DepartmentListComponent implements OnInit, OnDestroy {
   private depsSub: Subscription;
   isLoading = false;
   displayedColumns: string[] = [
-    'id',
+    // 'id',
     'name',
     'desc',
     'satisfaction',
