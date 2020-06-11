@@ -23,6 +23,7 @@ var skill = require("./routes/skill");
 var job = require("./routes/job");
 var university = require("./routes/university");
 var question = require("./routes/question");
+var quiz = require("./routes/quiz");
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -44,6 +45,7 @@ app.use("/api/", skill);
 app.use("/api/", job);
 app.use("/api/", university);
 app.use("/api/", question);
+app.use("/api/", quiz);
 
 app.listen(8080, () => {
   console.log(`Server listening on http://localhost:8080`);

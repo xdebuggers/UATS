@@ -20,4 +20,4 @@ DepartmentSchema.method("transform", function () {
   return obj;
 });
 
-module.exports = mongoose.model("department", DepartmentSchema);
+module.exports = mongoose.model("departments", DepartmentSchema);
