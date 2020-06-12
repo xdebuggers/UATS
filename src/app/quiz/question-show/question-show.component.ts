@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../quiz.service';
 import { Subscription } from 'rxjs';
 import { Quiz } from '../quiz.model';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-question-show',
@@ -11,9 +12,11 @@ import { Quiz } from '../quiz.model';
 export class QuestionShowComponent implements OnInit {
   constructor(public quizService: QuizService) {}
 
+  faCheckCircle = faCheckCircle;
   question: queData;
   private queSub: Subscription;
   isLoading = false;
+  questionNumber = 1;
 
   ngOnInit() {
     this.isLoading = true;
@@ -29,9 +32,11 @@ export class QuestionShowComponent implements OnInit {
   }
   onYes() {
     this.quizService.result(1, this.question.id);
+    this.questionNumber++;
   }
   onNo() {
     this.quizService.result(0, this.question.id);
+    this.questionNumber++;
   }
 }
 class queData {

@@ -1,39 +1,40 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>Create new department</mat-card-title>
+    <mat-card-title>Yeni Bölüm Oluştur</mat-card-title>
     <mat-card-subtitle
-      >Please fill the form to create a new department</mat-card-subtitle
+      >Lütfen tüm alanları eksiksiz doldurun ve yeni bölümü
+      oluşturun.</mat-card-subtitle
     >
   </mat-card-header>
   <form [formGroup]="depForm" (ngSubmit)="onSubmit()">
     <div style="padding: 16px;">
       <mat-card-content>
         <mat-form-field>
-          <mat-label>Name</mat-label>
+          <mat-label>Bölüm Adı</mat-label>
           <input
             formControlName="name"
             matInput
-            placeholder="Ex. Computer Engeneeing"
+            placeholder="Örneğin: Bilgisayar Mühendisliği"
           />
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Description</mat-label>
+          <mat-label>Bölüm Açıklaması</mat-label>
           <textarea
             formControlName="description"
             matInput
-            placeholder="Ex. A good dep."
+            placeholder="Örneğin: Bilişim ile ilgilenenlerin okuyabileceği bir bölümdür."
           ></textarea>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Satisfaction</mat-label>
+          <mat-label>Memnuniyet</mat-label>
           <input
             formControlName="satisfaction"
             matInput
-            placeholder="Ex. 70%"
+            placeholder="Örneğin: 70%"
           />
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Courses</mat-label>
+          <mat-label>Dersler</mat-label>
           <mat-select formControlName="courses" multiple>
             <mat-option *ngFor="let course of coursesList" [value]="course">{{
               course.name
@@ -41,7 +42,7 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Skills</mat-label>
+          <mat-label>Beceriler</mat-label>
           <mat-select formControlName="skills" multiple>
             <mat-option *ngFor="let skill of skillsList" [value]="skill">{{
               skill.name
@@ -49,7 +50,7 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Jobs</mat-label>
+          <mat-label>İş İmkanları</mat-label>
           <mat-select formControlName="jobs" multiple>
             <mat-option *ngFor="let job of jobsList" [value]="job">{{
               job.name
@@ -57,7 +58,7 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Universities</mat-label>
+          <mat-label>Bulunduğu Bölümler</mat-label>
           <mat-select formControlName="universities" multiple>
             <mat-option *ngFor="let uni of universitiesList" [value]="uni">{{
               uni.name
@@ -69,8 +70,8 @@
   </form>
   <mat-card-actions>
     <button mat-button color="warn" (click)="router.navigate(['departments'])">
-      Back
+      Geri
     </button>
-    <button mat-button color="primary" (click)="onSubmit()">Add</button>
+    <button mat-button color="primary" (click)="onSubmit()">Ekle</button>
   </mat-card-actions>
 </mat-card>

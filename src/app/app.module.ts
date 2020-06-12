@@ -21,6 +21,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DepartmentShowComponent } from './departments/department-show/department-show.component';
 import { QuestionListComponent } from './quiz/question-list/question-list.component';
 import { QuestionShowComponent } from './quiz/question-show/question-show.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { QuestionShowComponent } from './quiz/question-show/question-show.compon
     HttpClientModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

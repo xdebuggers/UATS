@@ -1,16 +1,30 @@
-<p *ngIf="!question || question == null">Bitrdin</p>
-<mat-card class="example-card" *ngIf="question || question != null">
+<mat-card
+  class="done-questions"
+  [ngClass]="{ 'display-block': this.questionNumber > 4 }"
+>
+  <fa-icon [icon]="faCheckCircle"></fa-icon>
+  <div class="done-text">Testi Bitirdiniz.</div>
+  <p>
+    İlgi alanınıza göre belirlenen bölümler aşağıda listelenmiştir. Detaylı
+    bilgi edinmek için bölümlere tıklayınız.
+  </p>
+</mat-card>
+
+<mat-card
+  class="example-card question-area"
+  *ngIf="question || question != null"
+>
   <mat-card-content>
-    <h3>1st quesyopn</h3>
-    <p>
+    <h3 class="title">{{ this.questionNumber }}. Soru</h3>
+    <p class="content">
       {{ question.content }}
     </p>
   </mat-card-content>
   <mat-card-actions>
     <div class="spacer">
-      <button mat-button (click)="onYes()">Yes</button>
+      <button mat-button (click)="onYes()" class="yes-button">Evet</button>
       <span class="example-spacer"></span>
-      <button mat-button (click)="onNo()">No</button>
+      <button mat-button (click)="onNo()" class="no-button">Hayır</button>
     </div>
   </mat-card-actions>
 </mat-card>

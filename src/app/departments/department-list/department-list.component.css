@@ -20,3 +20,7 @@ table {
 mat-spinner {
   margin: auto;
 }
+
+.mat-elevation-z8 td {
+  padding: 0.6rem 1rem;
+}
